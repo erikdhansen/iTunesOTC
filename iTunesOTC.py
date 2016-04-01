@@ -15,7 +15,7 @@ i = 0
 print("Loaded %d songs from library file" % len(l.songs))
 print("Starting up iTunesOTC server on port %d" % port)
 
-l.songs.items().sort(key=operator.itemgetter('name'))
+#l.songs.items().sort(key=operator.itemgetter('name'))
 
 def app(environ, start_response):
   headers = [('Content-Type', 'text/plain')]
@@ -56,7 +56,7 @@ def find_song(d):
 
   try:
     key_value = int(key_value)
-    print("Key[%s] => %d IS an int" % key_name, key_value)
+    print("Key[%s] => %d IS an int" % (key_name, key_value))
   except ValueError:
     print("Key[", key_name,"] => ", key_value ," is NOT an int")
 
